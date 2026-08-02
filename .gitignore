@@ -10,14 +10,11 @@ db.sqlite3
 # Virtualenv
 venv/
 env/
+.venv/
+.env/
 
 # Environment variables
 .env
 
 # OS
 .DS_Store
-
-
-.shaxi
-
-.beki_lox
