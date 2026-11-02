@@ -4,3 +4,6 @@ from django.http import HttpResponse
 
 def index(request, name):
     return HttpResponse(f"Assalomu aleykum, {name}")
+
+def saydullo(request):
+    return HttpResponse("Assalomu aleykum Saydullo")
