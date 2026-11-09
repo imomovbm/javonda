@@ -12,6 +12,9 @@ def index(request, name):
 def bekzod(request):
     return HttpResponse("Assalom Bekzod")
 
+def bekzod(request):
+    return HttpResponse("Assalom Saydullo")
+
 def ruhshona(request):
     return HttpResponse("Assalom Rushi")
 
