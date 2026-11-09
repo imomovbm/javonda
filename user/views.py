@@ -7,7 +7,7 @@ from .forms import RoyxatdanOtishForm
 # Create your views here.
 
 def index(request, name):
-    return HttpResponse(f"Assalomu aleykum,   {name}")
+    return HttpResponse(f"Assalomu aleykum,{name}")
 
 def bekzod(request):
     return HttpResponse("Assalom Bekzod")
