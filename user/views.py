@@ -7,3 +7,6 @@ def index(request, name):
 
 def bekzod(request):
     return HttpResponse("Assalom Bekzod")
+
+def ruhshona(request):
+    return HttpResponse("Assalom Rushi")
