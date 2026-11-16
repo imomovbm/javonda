@@ -1,0 +1,105 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVONDA | Mahsulotlar</title>
+    <link rel="stylesheet" href="{% static 'products/style.css' %}">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <h1>Mahsulotlar</h1>
+        <input
+        type="text"
+        class="search"
+        id="productSearch"
+        placeholder="🔍 Mahsulot qidirish..."
+    >
+    </div>
+
+    <div class="products">
+
+        {% for product in products %}
+        <div class="product-card">
+        
+            <div class="image-box">
+                {% if product.image %}
+                    <img src="{{ product.image.url }}"
+                         alt="{{ product.name }}"
+                         class="product-image">
+                {% else %}
+                    <div class="no-image">🌸</div>
+                {% endif %}
+            </div>
+        
+            <div class="product-info">
+                <h3>{{ product.name }}</h3>
+            
+                <p>{{ product.description }}</p>
+            
+                <div class="price">
+                    {{ product.price }} so'm
+                </div>
+            
+                <div class="quantity">
+                    Omborda: {{ product.quantity }} ta
+                </div>
+            </div>
+        
+        </div>
+        {% empty %}
+        <p>Hozircha mahsulotlar mavjud emas.</p>
+        {% endfor %}
+
+        {% comment %} {% for product in products %}
+        {% if product.image %}
+         <img src="{{ product.image.url }}"
+         alt="{{ product.name }}"
+         class="product-image">
+        {% endif %}
+        <div class="product-card">
+
+            <h3>{{ product.name }}</h3>
+
+            <p>{{ product.description }}</p>
+
+            <div class="price">
+                {{ product.price }} so'm
+            </div>
+
+            <div class="quantity">
+                Omborda: {{ product.quantity }} ta
+            </div>
+
+        </div>
+        {% empty %}
+        <p>Hozircha mahsulotlar mavjud emas.</p>
+        {% endfor %} {% endcomment %}
+
+    </div>
+
+</div>
+<script>
+    const searchInput = document.getElementById("productSearch");
+    const cards = document.querySelectorAll(".product-card");
+    
+    searchInput.addEventListener("input", function () {
+        const value = this.value.toLowerCase();
+    
+        cards.forEach(card => {
+            const text = card.innerText.toLowerCase();
+    
+            card.style.display = text.includes(value)
+                ? "block"
+                : "none";
+        });
+    });
+    </script>
+</body>
+</html>
