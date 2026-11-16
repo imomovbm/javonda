@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Javonda — sifatli va qulay xizmat</title>
+<style>
+:root{
+--bg:#f7faf8;--surface:#ffffff;--text:#14201a;--muted:#5b6b62;--line:#e1ebe5;
+--brand:#1f8a5b;--brand2:#14b8a6;--accent:#f59e0b;--glass:rgba(255,255,255,.75);--shadow:0 10px 30px rgba(20,60,40,.10);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+--bg:#0c1210;--surface:#141d19;--text:#eaf3ee;--muted:#9bb0a5;--line:#22322b;
+--brand:#34d399;--brand2:#2dd4bf;--accent:#fbbf24;--glass:rgba(12,18,16,.75);--shadow:0 10px 30px rgba(0,0,0,.4)}}
+:root[data-theme="dark"]{--bg:#0c1210;--surface:#141d19;--text:#eaf3ee;--muted:#9bb0a5;--line:#22322b;--brand:#34d399;--brand2:#2dd4bf;--accent:#fbbf24;--glass:rgba(12,18,16,.75);--shadow:0 10px 30px rgba(0,0,0,.4)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;height:100%}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+header{position:sticky;top:0;z-index:20;background:var(--glass);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:22px}
+.logo i{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--brand),var(--brand2));display:grid;place-items:center;color:#fff;font-style:normal;font-size:18px}
+nav{display:flex;align-items:center;gap:28px}
+nav a.l{color:var(--muted);font-weight:500;transition:color .2s}
+nav a.l:hover{color:var(--brand)}
+.btn{display:inline-block;padding:13px 28px;border-radius:12px;font-weight:700;border:0;cursor:pointer;font-size:16px;transition:transform .2s,box-shadow .2s}
+.btn.p{background:linear-gradient(135deg,var(--brand),var(--brand2));color:#fff;box-shadow:0 8px 20px rgba(31,138,91,.35)}
+.btn.p:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(31,138,91,.45)}
+.btn.o{background:transparent;border:2px solid var(--line);color:var(--text)}
+.btn.o:hover{border-color:var(--brand);color:var(--brand)}
+.sm{padding:9px 20px;font-size:15px}
+.hero{position:relative;overflow:hidden;padding:96px 0 80px}
+.hero::before,.hero::after{content:"";position:absolute;border-radius:50%;filter:blur(70px);opacity:.35;z-index:0}
+.hero::before{width:420px;height:420px;background:var(--brand2);top:-120px;right:-80px}
+.hero::after{width:360px;height:360px;background:var(--accent);bottom:-160px;left:-100px;opacity:.22}
+.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.tag{display:inline-block;padding:6px 14px;border-radius:99px;background:var(--surface);border:1px solid var(--line);color:var(--brand);font-weight:700;font-size:14px;margin-bottom:18px}
+h1.big{font-size:clamp(36px,5.5vw,62px);line-height:1.08;letter-spacing:-1.5px;margin-bottom:20px}
+h1.big span{background:linear-gradient(135deg,var(--brand),var(--brand2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.lead{font-size:19px;color:var(--muted);max-width:520px;margin-bottom:32px}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.visual{position:relative;height:380px}
+.vc{position:absolute;background:var(--surface);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:20px;animation:float 6s ease-in-out infinite}
+.vc b{display:block;font-size:30px}
+.vc small{color:var(--muted)}
+.vc.a{top:10px;left:10px;width:230px}
+.vc.b{top:130px;right:0;width:250px;animation-delay:-2s}
+.vc.c{bottom:0;left:50px;width:240px;animation-delay:-4s}
+.bar2{height:8px;border-radius:9px;background:var(--line);margin-top:12px;overflow:hidden}
+.bar2 em{display:block;height:100%;width:82%;background:linear-gradient(90deg,var(--brand),var(--brand2));border-radius:9px}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.stats{padding:10px 0 60px}
+.sg{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.st{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px;text-align:center;box-shadow:var(--shadow)}
+.st b{font-size:36px;color:var(--brand);display:block}
+.st span{color:var(--muted)}
+section.s{padding:72px 0}
+.head{text-align:center;max-width:640px;margin:0 auto 48px}
+.head h2{font-size:clamp(28px,4vw,40px);letter-spacing:-1px;margin-bottom:12px}
+.head p{color:var(--muted);font-size:18px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:30px;transition:transform .25s,box-shadow .25s,border-color .25s}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--brand)}
+.ic{width:54px;height:54px;border-radius:16px;display:grid;place-items:center;font-size:26px;background:linear-gradient(135deg,rgba(31,138,91,.18),rgba(20,184,166,.18));margin-bottom:18px}
+.card h3{font-size:20px;margin-bottom:8px}
+.card p{color:var(--muted)}
+.steps{counter-reset:n}
+.steps .card{position:relative;padding-top:44px}
+.steps .card::before{counter-increment:n;content:counter(n);position:absolute;top:-18px;left:28px;width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--brand),var(--brand2));color:#fff;font-weight:800;display:grid;place-items:center}
+.alt{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.alt .card{background:var(--bg)}
+.q{font-size:17px;margin-bottom:18px}
+.who{display:flex;align-items:center;gap:12px}
+.av{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--brand));display:grid;place-items:center;color:#fff;font-weight:800}
+.who small{color:var(--muted);display:block}
+.stars{color:var(--accent);letter-spacing:2px;margin-bottom:10px}
+.banner{margin:72px 0;border-radius:28px;padding:64px 32px;text-align:center;color:#fff;background:linear-gradient(135deg,#127a4e,#0ea5a0);position:relative;overflow:hidden}
+.banner::after{content:"";position:absolute;width:300px;height:300px;border-radius:50%;background:rgba(255,255,255,.12);top:-120px;right:-80px}
+.banner h2{font-size:clamp(26px,4vw,38px);margin-bottom:12px;position:relative}
+.banner p{opacity:.9;margin-bottom:26px;position:relative}
+.banner .btn{background:#fff;color:#0f6f48;position:relative}
+.banner .btn:hover{transform:translateY(-2px)}
+footer{background:var(--surface);border-top:1px solid var(--line);padding:56px 0 28px}
+.fg{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:32px;margin-bottom:36px}
+.fg h4{margin-bottom:12px}
+.fg a{display:block;color:var(--muted);margin-bottom:8px}
+.fg a:hover{color:var(--brand)}
+.fg p{color:var(--muted);margin-top:12px;max-width:280px}
+.copy{border-top:1px solid var(--line);padding-top:20px;text-align:center;color:var(--muted);font-size:14px}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
+.rv.in{opacity:1;transform:none}
+@media (max-width:900px){
+.hero .wrap{grid-template-columns:1fr}.visual{height:340px}
+.sg{grid-template-columns:repeat(2,1fr)}.grid3{grid-template-columns:1fr}
+.fg{grid-template-columns:1fr 1fr}nav a.l{display:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<header>
+<div class="wrap bar">
+<a href="#top" class="logo"><i>J</i>Javonda</a>
+<nav>
+<a class="l" href="#imkon">Imkoniyatlar</a>
+<a class="l" href="#qadam">Qanday ishlaydi</a>
+<a class="l" href="#fikr">Fikrlar</a>
+<a class="l" href="#aloqa">Aloqa</a>
+<a class="btn p sm" href="#aloqa">Boshlash</a>
+</nav>
+</div>
+</header>
+
+<main id="top">
+<section class="hero">
+<div class="wrap">
+<div>
+<span class="tag">✨ Yangi avlod xizmati</span>
+<h1 class="big">Hammasi <span>bir joyda</span>, tez va qulay</h1>
+<p class="lead">Javonda — sifatli mahsulotlar va ishonchli xizmatni bir platformada jamlagan zamonaviy yechim. Vaqtingizni tejang, natijaga erishing.</p>
+<div class="cta">
+<a class="btn p" href="#aloqa">Hozir boshlash</a>
+<a class="btn o" href="#qadam">Qanday ishlaydi?</a>
+</div>
+</div>
+<div class="visual" aria-hidden="true">
+<div class="vc a"><small>Bugungi buyurtmalar</small><b>1 248</b><div class="bar2"><em></em></div></div>
+<div class="vc b"><small>Mijozlar mamnunligi</small><b>4.9 ★</b><small>2 000+ sharh asosida</small></div>
+<div class="vc c"><small>Yetkazib berish</small><b>24 soat</b><small>Butun O’zbekiston bo’ylab</small></div>
+</div>
+</div>
+</section>
+
+<section class="stats">
+<div class="wrap sg">
+<div class="st rv"><b>10 000+</b><span>Faol mijozlar</span></div>
+<div class="st rv"><b>5 000+</b><span>Mahsulotlar</span></div>
+<div class="st rv"><b>14</b><span>Viloyatlarda xizmat</span></div>
+<div class="st rv"><b>99%</b><span>Mamnun xaridorlar</span></div>
+</div>
+</section>
+
+<section class="s" id="imkon">
+<div class="wrap">
+<div class="head rv"><h2>Nega aynan Javonda?</h2><p>Sizga kerak bo’lgan hamma narsa — oddiy, tez va ishonchli.</p></div>
+<div class="grid3">
+<div class="card rv"><div class="ic">🏆</div><h3>Yuqori sifat</h3><p>Har bir mahsulot qat’iy nazoratdan o’tadi va kafolat bilan beriladi.</p></div>
+<div class="card rv"><div class="ic">⚡</div><h3>Yuqori tezlik</h3><p>Buyurtmangiz tez qayta ishlanadi va o’z vaqtida yetkaziladi.</p></div>
+<div class="card rv"><div class="ic">🛡️</div><h3>Xavfsizlik</h3><p>To’lovlar va ma’lumotlaringiz ishonchli himoya ostida.</p></div>
+<div class="card rv"><div class="ic">💬</div><h3>24/7 yordam</h3><p>Savollaringizga istalgan vaqtda mutaxassislarimiz javob beradi.</p></div>
+<div class="card rv"><div class="ic">💰</div><h3>Qulay narxlar</h3><p>Halol narxlar, yashirin to’lovlarsiz va muntazam chegirmalar.</p></div>
+<div class="card rv"><div class="ic">📱</div><h3>Hamma qurilmada</h3><p>Telefon, planshet yoki kompyuter — hammasida bir xil qulay.</p></div>
+</div>
+</div>
+</section>
+
+<section class="s alt" id="qadam">
+<div class="wrap">
+<div class="head rv"><h2>Uch oddiy qadam</h2><p>Boshlash uchun murakkab narsa kerak emas.</p></div>
+<div class="grid3 steps">
+<div class="card rv"><h3>Tanlang</h3><p>Katalogdan o’zingizga mosini toping yoki qidiruvdan foydalaning.</p></div>
+<div class="card rv"><h3>Buyurtma bering</h3><p>Bir necha bosishda buyurtmani rasmiylashtiring va to’lang.</p></div>
+<div class="card rv"><h3>Qabul qiling</h3><p>Mahsulot eshigingizgacha yetkaziladi. Hammasi shu!</p></div>
+</div>
+</div>
+</section>
+
+<section class="s" id="fikr">
+<div class="wrap">
+<div class="head rv"><h2>Mijozlarimiz nima deydi</h2><p>Minglab odamlar bizga ishonadi.</p></div>
+<div class="grid3">
+<div class="card rv"><div class="stars">★★★★★</div><p class="q">“Juda tez va qulay ekan. Buyurtma ertasiga keldi, sifati a’lo.”</p><div class="who"><div class="av">A</div><div><b>Aziza K.</b><small>Buxoro</small></div></div></div>
+<div class="card rv"><div class="stars">★★★★★</div><p class="q">“Narxlar halol, yordam xizmati esa har doim aloqada. Tavsiya qilaman.”</p><div class="who"><div class="av">J</div><div><b>Jasur M.</b><small>Toshkent</small></div></div></div>
+<div class="card rv"><div class="stars">★★★★★</div><p class="q">“Saytdan foydalanish juda oson, telefondan ham zo’r ishlaydi.”</p><div class="who"><div class="av">D</div><div><b>Dilnoza R.</b><small>Samarqand</small></div></div></div>
+</div>
+</div>
+</section>
+
+<div class="wrap" id="aloqa">
+<div class="banner rv">
+<h2>Bugunoq Javonda bilan boshlang</h2>
+<p>Ro’yxatdan o’ting va birinchi buyurtmangizga maxsus chegirma oling.</p>
+<a class="btn" href="#top">Ro’yxatdan o’tish</a>
+</div>
+</div>
+</main>
+
+<footer>
+<div class="wrap">
+<div class="fg">
+<div><a href="#top" class="logo"><i>J</i>Javonda</a><p>Sifatli mahsulotlar va ishonchli xizmat bir joyda.</p></div>
+<div><h4>Sahifalar</h4><a href="#imkon">Imkoniyatlar</a><a href="#qadam">Qanday ishlaydi</a><a href="#fikr">Fikrlar</a></div>
+<div><h4>Kompaniya</h4><a href="#">Biz haqimizda</a><a href="#">Karyera</a><a href="#">Yangiliklar</a></div>
+<div><h4>Aloqa</h4><a href="#">+998 00 000 00 00</a><a href="#">info@javonda.uz</a><a href="#">Buxoro, O’zbekiston</a></div>
+</div>
+<div class="copy">© 2026 Javonda. Barcha huquqlar himoyalangan.</div>
+</div>
+</footer>
+
+<script>
+(function(){
+var els=document.querySelectorAll('.rv');
+if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.12});
+els.forEach(function(e){io.observe(e)});
+})();
+</script>
+</body>
+</html>
